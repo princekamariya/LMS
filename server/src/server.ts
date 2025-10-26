@@ -11,6 +11,7 @@ import authRoutes from "./routes/auth-routes/index.js";
 import instructorCourseRoutes from "./routes/instructor-routes/course-route.js";
 import studentViewCourseRoutes from "./routes/student-routes/course-routes.js";
 import studentCoursesRoutes from "./routes/student-routes/student-courses-routes.js";
+import studentCourseProgressRoutes from "./routes/student-routes/course-progress-routes.js";
 
 dotenv.config();
 
@@ -30,6 +31,7 @@ app.use("/auth/", authRoutes);
 app.use("/instructor/course", instructorCourseRoutes);
 app.use("/student/course", studentViewCourseRoutes);
 app.use("/student/courses-bought", studentCoursesRoutes);
+app.use("/student/course-progress", studentCourseProgressRoutes);
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     logger.error(err);
