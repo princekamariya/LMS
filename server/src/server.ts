@@ -23,7 +23,7 @@ cors({
 
 app.use(express.json());
 app.use(cors());
-app.use("/auth", authRoutes);
+app.use("/auth/", authRoutes);
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     logger.error(err);
