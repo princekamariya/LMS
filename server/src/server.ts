@@ -10,6 +10,7 @@ import dotenv from "dotenv";
 import authRoutes from "./routes/auth-routes/index.js";
 import instructorCourseRoutes from "./routes/instructor-routes/course-route.js";
 import studentViewCourseRoutes from "./routes/student-routes/course-routes.js";
+import studentCoursesRoutes from "./routes/student-routes/student-courses-routes.js";
 
 dotenv.config();
 
@@ -28,6 +29,7 @@ app.use(cors());
 app.use("/auth/", authRoutes);
 app.use("/instructor/course", instructorCourseRoutes);
 app.use("/student/course", studentViewCourseRoutes);
+app.use("/student/courses-bought", studentCoursesRoutes);
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     logger.error(err);
