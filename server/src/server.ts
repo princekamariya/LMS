@@ -13,6 +13,7 @@ import studentViewCourseRoutes from "./routes/student-routes/course-routes.js";
 import studentCoursesRoutes from "./routes/student-routes/student-courses-routes.js";
 import studentCourseProgressRoutes from "./routes/student-routes/course-progress-routes.js";
 import mediaRoutes from "./routes/instructor-routes/media-routes.js";
+import studentViewOrderRoutes from "./routes/student-routes/order-routes.js";
 
 dotenv.config();
 
@@ -34,6 +35,7 @@ app.use("/student/course", studentViewCourseRoutes);
 app.use("/student/courses-bought", studentCoursesRoutes);
 app.use("/student/course-progress", studentCourseProgressRoutes);
 app.use("/media", mediaRoutes);
+app.use("/student/order", studentViewOrderRoutes);
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     logger.error(err);
